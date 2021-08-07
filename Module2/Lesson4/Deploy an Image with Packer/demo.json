@@ -18,7 +18,9 @@
     "managed_image_name": "myPackerImage",
 
     "location": "East US",
-    "vm_size": "Standard_F2"
+    "vm_size": "Standard_F2",
+
+    "azure_tags": {"app": "Project 1"}
   }],
   "provisioners": [{
     "inline": [
