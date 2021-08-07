@@ -5,7 +5,7 @@ For this project, you will write a Packer template and a Terraform template to d
 
 ### Getting Started
 This repository contains:
-1. A Terraform module for deploying a tagging policy on Azure;
+1. A Terraform module for deploying a tagging policy on Azure (output [here](./Policies/README.md));
 2. A Packer template configuration, for building (and pushing to Azure) a virtual machine (VM) image;
 3. A Terraform module for deploying a configurable number of virtual machines using the image created above.
 
