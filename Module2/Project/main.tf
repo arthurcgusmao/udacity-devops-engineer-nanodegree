@@ -4,16 +4,17 @@ provider "azurerm" {
 
 locals {
   prefix = "${var.name}-${var.environment}"
+  tags = {
+    app = var.name
+    environment = var.environment
+  }
 }
 
 resource "azurerm_resource_group" "app" {
   name     = "${local.prefix}-rg"
   location = var.location
 
-  tags = {
-    app = var.name
-    environment = var.environment
-  }
+  tags = local.tags
 }
 
 
@@ -128,12 +129,14 @@ resource "azurerm_linux_virtual_machine" "app" {
   availability_set_id = azurerm_availability_set.app.id
 
   # source_image_id = azurerm_managed_disk.app[count.index].id
-  source_image_id = "/subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf/resourceGroups/PROJECT1-DEV-RG/providers/Microsoft.Compute/images/project1-vm-image"
+  source_image_id = "/subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf/resourceGroups/project1-dev-rg/providers/Microsoft.Compute/images/project1-vm-image"
 
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
   }
+
+  tags = local.tags
 }
 resource "azurerm_managed_disk" "app" {
   count = var.replicas

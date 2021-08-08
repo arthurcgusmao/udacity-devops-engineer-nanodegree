@@ -1,0 +1,21 @@
+{
+    "description": null,
+    "displayName": "",
+    "enforcementMode": "Default",
+    "id": "/subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf/providers/Microsoft.Authorization/policyAssignments/tagging-policy-assignment",
+    "identity": null,
+    "location": null,
+    "metadata": {
+        "createdBy": "d01e3bac-5990-4983-bba0-574e22a47d55",
+        "createdOn": "2021-08-03T14:42:00.2230231Z",
+        "updatedBy": null,
+        "updatedOn": null
+    },
+    "name": "tagging-policy-assignment",
+    "nonComplianceMessages": null,
+    "notScopes": null,
+    "parameters": null,
+    "policyDefinitionId": "/subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf/providers/Microsoft.Authorization/policyDefinitions/tagging-policy",
+    "scope": "/subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf",
+    "type": "Microsoft.Authorization/policyAssignments"
+}
