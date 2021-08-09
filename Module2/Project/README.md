@@ -29,6 +29,20 @@ The output will be a JSON representation of your resource group. Copy the resour
 ```console
 packer build server.json
 ```
+The output of this command will be as shown below. Here, copy the `ManagedImageId`, and replace the existing value of `source_image_id` in the VM configuraiton in `main.tf`.
+```text
+==> Wait completed after 4 minutes 17 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> azure-arm: Azure.ResourceManagement.VMImage:
+
+OSType: Linux
+ManagedImageResourceGroupName: project1-dev-rg
+ManagedImageName: project1-vm-image
+ManagedImageId: /subscriptions/0662842a-dcd9-4ef6-9862-b0f975d96bcf/resourceGroups/project1-dev-rg/providers/Microsoft.Compute/images/project1-vm-image
+ManagedImageLocation: westeurope
+```
+
 
 3) Initialize terraform and import the existing resource group we created in step 1. This is necessary so that Terraform identifies the resource as it is already deployed. Replace `<RESOURCE-GROUP-ID>` below with the ID you copied in step 1.
 ```console
