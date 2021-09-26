@@ -37,6 +37,31 @@ resource "azurerm_network_security_group" "app" {
   location            = azurerm_resource_group.app.location
   resource_group_name = azurerm_resource_group.app.name
 
+  # security_rule {
+  #   for_each = toset(["Inbound", "Outbound"])
+  #   name                       = "Allow${each.value}InternalSubnetTraffic"
+  #   priority                   = 100
+  #   direction                  = "${each.value}"
+  #   access                     = "Allow"
+  #   protocol                   = "*"
+  #   source_port_range          = "*"
+  #   destination_port_range     = "*"
+  #   source_address_prefix      = "VirtualNetwork"
+  #   destination_address_prefix = "VirtualNetwork"
+  # }
+  # security_rule {
+  #   for_each = toset(["Inbound", "Outbound"])
+  #   name                       = "Deny${each.value}InternalSubnetTraffic"
+  #   priority                   = 100
+  #   direction                  = "${each.value}"
+  #   access                     = "Allow"
+  #   protocol                   = "*"
+  #   source_port_range          = "*"
+  #   destination_port_range     = "*"
+  #   source_address_prefix      = "VirtualNetwork"
+  #   destination_address_prefix = "VirtualNetwork"
+  # }
+
   security_rule {
     name                       = "AllowOutboundInternalTraffic"
     priority                   = 100
